@@ -1,0 +1,17 @@
+<!-- templates/gestion_clinica/programar_cita.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Programar Cita{% endblock %}
+
+{% block content %}
+<h2>Programar Cita</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Programar</button>
+</form>
+<hr>
+<h3>Lista de Citas</h3>
+<button class="button-link" onclick="window.location.href='{% url 'listar_citas' %}'">Ver Lista de Citas</button>
+{% endblock %}

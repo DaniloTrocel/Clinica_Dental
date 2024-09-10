@@ -1,0 +1,29 @@
+<!-- templates/gestion_clinica/listar_citas.html -->
+{% extends 'base.html' %}
+{% block title %}Lista de Citas{% endblock %}
+
+{% block content %}
+<h2>Lista de Citas</h2>
+<table>
+	<tr>
+		<th>Paciente</th>
+		<th>Fecha</th>
+		<th>Hora</th>
+		<th>Descripción</th>
+		<th>Acciones</th>
+	</tr>
+	{% for cita in citas %}
+	<tr>
+		<td>{{ cita.paciente }}</td>
+		<td>{{ cita.fecha }}</td>
+		<td>{{ cita.hora }}</td>
+		<td>{{ cita.descripcion }}</td>
+		<td>
+			<button><a href="{% url 'modificar_cita' cita.id %}" class="btn btn-primary">Modificar</a></button>
+			<button><a href="{% url 'eliminar_cita' cita.id %}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar esta cita?');">Eliminar</a></button>
+		</td>
+	</tr>
+	{% endfor %}
+</table>
+<button onclick="window.location.href='{% url 'generar_pdf_citas' %}'" class="btn btn-success">Generar PDF</button>
+{% endblock %}

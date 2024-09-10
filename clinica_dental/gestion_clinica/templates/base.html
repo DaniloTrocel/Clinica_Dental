@@ -1,0 +1,33 @@
+<!-- templates/gestion_clinica/base.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mi Clínica Dental{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'estilo.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Clínica Dental Caracas</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'registrar_paciente' %}">Registrar Paciente</a></li>
+                <li><a href="{% url 'registrar_medico' %}">Agregar Médico</a></li>
+                <li><a href="{% url 'programar_cita' %}">Programar Cita</a></li>
+                <li><a href="{% url 'registrar_tratamiento' %}">Registrar Tratamiento</a></li>
+                <li><a href="{% url 'gestionar_inventario' %}">Gestionar Inventario</a></li>
+                <li><a href="{% url 'actualizar_historial_clinico' %}">Actualizar Historial Clínico</a></li>
+                <li><a href="{% url 'gestionar_factura' %}">Gestionar Factura</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2023 Clínica Dental Caracas</p>
+    </footer>
+</body>
+</html>

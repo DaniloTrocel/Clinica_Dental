@@ -1,0 +1,14 @@
+<!-- templates/gestion_clinica/listar_historial_clinico.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Listar Historial Clínico{% endblock %}
+
+{% block content %}
+<h2>Historial Clínico</h2>
+<ul>
+	{% for historial in historiales %}
+		<li>{{ historial.paciente.nombre }} {{ historial.paciente.apellido }} - {{ historial.fecha }} - {{ historial.descripcion }}</li>
+	{% endfor %}
+</ul>
+{% endblock %}

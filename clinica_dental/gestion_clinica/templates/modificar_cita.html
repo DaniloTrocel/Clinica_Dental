@@ -1,0 +1,12 @@
+<!-- templates/gestion_clinica/modificar_cita.html -->
+{% extends 'base.html' %}
+{% block title %}Modificar Cita{% endblock %}
+
+{% block content %}
+<h2>Modificar Cita</h2>
+<form method="post">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit">Guardar cambios</button>
+</form>
+{% endblock %}

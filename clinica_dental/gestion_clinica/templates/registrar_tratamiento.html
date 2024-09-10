@@ -1,0 +1,21 @@
+<!-- templates/gestion_clinica/registrar_tratamiento.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Registrar Tratamiento{% endblock %}
+
+{% block content %}
+<h2>Registrar Tratamiento</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Registrar</button>
+</form>
+<hr>
+<h3>Lista de Tratamientos</h3>
+<button class="button-link" onclick="window.location.href='{% url 'listar_tratamientos' %}'">Ver Lista de Tratamientos</button>
+{% endblock %}
+
+{% block extra_content %}
+<p>This is some extra content.</p>
+{% endblock %}

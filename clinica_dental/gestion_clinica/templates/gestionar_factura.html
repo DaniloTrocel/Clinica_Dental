@@ -1,0 +1,13 @@
+<!-- templates/gestion_clinica/gestionar_factura.html -->
+{% extends 'base.html' %}
+{% block title %}Gestionar Factura{% endblock %}
+
+{% block content %}
+<h2>Gestionar Factura</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Guardar Factura</button>
+</form>
+<button onclick="window.location.href='{% url 'listar_facturas' %}'" class="btn btn-success">Ver Lista de Facturas</button>
+{% endblock %}

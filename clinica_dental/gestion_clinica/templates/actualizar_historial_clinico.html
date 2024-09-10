@@ -1,0 +1,13 @@
+<!-- templates/actualizar_historial_clinico.html -->
+{% extends 'base.html' %}
+
+{% block title %}Actualizar Historial Clínico{% endblock %}
+
+{% block content %}
+<h1>Actualizar Historial Clínico</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Actualizar</button>
+</form>
+{% endblock %}

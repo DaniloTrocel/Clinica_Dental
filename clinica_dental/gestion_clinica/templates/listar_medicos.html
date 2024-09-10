@@ -1,0 +1,32 @@
+<!-- templates/gestion_clinica/listar_medicos.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Lista de Médicos{% endblock %}
+
+{% block content %}
+<h2>Lista de Médicos</h2>
+<table>
+	<tr>
+		<th>Nombre</th>
+		<th>Apellido</th>
+		<th>Fecha de Nacimiento</th>
+		<th>Dirección</th>
+		<th>Teléfono</th>
+		<th>Email</th>
+		<th>Especialidad</th>
+	</tr>
+	{% for medico in medicos %}
+	<tr>
+		<td>{{ medico.nombre }}</td>
+		<td>{{ medico.apellido }}</td>
+		<td>{{ medico.fecha_nacimiento }}</td>
+		<td>{{ medico.direccion }}</td>
+		<td>{{ medico.telefono }}</td>
+		<td>{{ medico.email }}</td>
+		<td>{{ medico.especialidad }}</td>
+	</tr>
+	{% endfor %}
+</table>
+</div>
+{% endblock %}

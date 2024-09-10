@@ -1,0 +1,24 @@
+<!-- templates/gestion_clinica/facturas_pdf.html -->
+<DOCTYPE html>
+<html>
+<head>
+	<title>Facturas</title>
+</head>
+<body>
+	<h1>Lista de Facturas</h1>
+	<table border="1">
+		<tr>
+			<th>Tratamiento</th>
+			<th>Fecha</th>
+			<th>Descripción</th>
+		</tr>
+		{% for factura in facturas %}
+		<tr>
+			<td>{{ factura.tratamiento }}</td>
+			<td>{{ factura.fecha }}</td>
+			<td>{{ factura.descripcion }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>

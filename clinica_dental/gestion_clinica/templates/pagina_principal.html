@@ -1,0 +1,21 @@
+<!-- gestion_clinica/templates/pagina_principal.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Página Principal{% endblock %}
+
+{% block content %}
+<h2>Bienvenido a la Clínica Dental Caracas</h2>
+<p>Seleccione una opción del menú para continuar:</p>
+<nav>
+    <ul>
+        <li><a href="{% url 'registrar_paciente' %}">Registrar Paciente</a></li>
+        <li><a href="{% url 'listar_pacientes' %}">Pacientes</a></li>
+        <li><a href="{% url 'listar_citas' %}">Citas</a></li>
+        <li><a href="{% url 'listar_tratamientos' %}">Tratamientos</a></li>
+        <li><a href="{% url 'listar_facturas' %}">Facturas</a></li>
+        <li><a href="{% url 'listar_inventario' %}">Inventario</a></li>
+        <li><a href="{% url 'listar_historial_clinico' %}">Historial Clínico</a></li>
+    </ul>
+</nav>
+{% endblock %}

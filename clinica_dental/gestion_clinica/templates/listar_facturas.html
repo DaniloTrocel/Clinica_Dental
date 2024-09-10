@@ -1,0 +1,22 @@
+<!-- templates/gestion_clinica/listar_facturas.html -->
+{% extends 'base.html' %}
+{% block title %}Lista de Facturas{% endblock %}
+
+{% block content %}
+<h2>Lista de Facturas</h2>
+<table>
+	<tr>
+		<th>Tratamiento</th>
+		<th>Fecha</th>
+		<th>Descripción</th>
+	</tr>
+	{% for factura in facturas %}
+	<tr>
+		<td>{{ factura.tratamiento }}</td>
+		<td>{{ factura.fecha }}</td>
+		<td>{{ factura.descripcion }}</td>
+	</tr>
+	{% endfor %}
+</table>
+<button onclick="window.location.href='{% url 'generar_pdf_facturas' %}'" class="btn btn-success">Generar PDF</button>
+{% endblock %}

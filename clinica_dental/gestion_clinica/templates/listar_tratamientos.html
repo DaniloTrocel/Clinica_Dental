@@ -1,0 +1,31 @@
+<!-- templates/gestion_clinica/listar_tratamientos.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Lista de Tratamientos{% endblock %}
+
+{% block content %}
+<h2>Lista de Tratamientos</h2>
+<table>
+	<tr>
+		<th>Paciente</th>
+		<th>Tratamiento</th>
+		<th>Fecha de Inicio</th>
+		<th>Fecha de Fin</th>
+		<th>Descripción</th>
+	</tr>
+	{% for tratamiento in tratamientos %}
+	<tr>
+		<td>{{ tratamiento.paciente }}</td>
+		<td>{{ tratamiento.nombre }}</td>
+		<td>{{ tratamiento.fecha_inicio }}</td>
+		<td>{{ tratamiento.fecha_fin }}</td>
+		<td>{{ tratamiento.descripcion }}</td>
+	</tr>
+	{% endfor %}
+</table>
+<button onclick="window.location.href='{% url 'generar_pdf_tratamientos' %}'">Generar PDF</button>
+</table>
+</body>
+</html>
+{% endblock %}

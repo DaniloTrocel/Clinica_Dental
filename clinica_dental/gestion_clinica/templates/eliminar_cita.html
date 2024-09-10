@@ -1,0 +1,13 @@
+<!-- templates/gestion_clinica/eliminar_cita.html -->
+{% extends 'base.html' %}
+{% block title %}Eliminar Cita{% endblock %}
+
+{% block content %}
+<h2>Eliminar Cita</h2>
+<p>¿Estás seguro de que deseas eliminar esta cita?</p>
+<form method="post">
+	{% csrf_token %}
+	<button type="submit">Eliminar</button>
+	<a href="{% url 'listar_citas' %}">Cancelar</a>
+</form>
+{% endblock %}

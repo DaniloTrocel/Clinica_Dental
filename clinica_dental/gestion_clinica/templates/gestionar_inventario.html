@@ -1,0 +1,17 @@
+<!-- templates/gestion_clinica/gestionar_inventario.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Gestionar Inventario{% endblock %}
+
+{% block content %}
+<h2>Gestionar Inventario</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+</form>
+<hr>
+<h3>Lista de Inventario</h3>
+<button class="button-link" onclick="window.location.href='{% url 'listar_inventario' %}'">Ver Lista de Inventario</button>
+{% endblock %}

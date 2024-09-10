@@ -1,0 +1,28 @@
+<!-- templates/gestion_clinica/listar_pacientes.html -->
+{% extends 'base.html' %}
+{% block title %}Lista de Pacientes{% endblock %}
+
+{% block content %}
+<h2>Lista de Pacientes</h2>
+<table>
+	<tr>
+		<th>Nombre</th>
+		<th>Apellido</th>
+		<th>Fecha de Nacimiento</th>
+		<th>Dirección</th>
+		<th>Teléfono</th>
+		<th>Email</th>
+	</tr>
+	{% for paciente in pacientes %}
+	<tr>
+		<td>{{ paciente.nombre }}</td>
+		<td>{{ paciente.apellido }}</td>
+		<td>{{ paciente.fecha_nacimiento }}</td>
+		<td>{{ paciente.direccion }}</td>
+		<td>{{ paciente.telefono }}</td>
+		<td>{{ paciente.email }}</td>
+	</tr>
+	{% endfor %}
+</table>
+<button onclick="window.location.href='{% url 'generar_pdf_pacientes' %}'">Generar PDF</button>
+{% endblock %}
